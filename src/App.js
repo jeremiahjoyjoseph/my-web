@@ -5,9 +5,10 @@ import WebFont from 'webfontloader';
 import { useTheme } from './theme/useTheme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './theme/GlobalStyles';
+import { clearLS, getFromLS } from './utils/storage';
 
 function App() {
-  const { theme, themeLoaded, getFonts } = useTheme();
+  const { theme, themeLoaded, getFonts, setMode } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);
 
   useEffect(() => {
@@ -27,20 +28,6 @@ function App() {
       {themeLoaded && (
         <ThemeProvider theme={selectedTheme}>
           <GlobalStyles />
-          <header className='App-header'>
-            <img src={logo} className='App-logo' alt='logo' />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className='App-link'
-              href='https://reactjs.org'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Learn React
-            </a>
-          </header>
         </ThemeProvider>
       )}
     </div>
