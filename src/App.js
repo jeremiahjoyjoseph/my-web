@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
 import './App.css';
 import MainProvider from './providers/MainProvider';
+import RouteSwitch from './routes/routeSwitch';
 import { GlobalStyles } from './theme/GlobalStyles';
 import { useTheme } from './theme/useTheme';
 
@@ -23,15 +24,16 @@ function App() {
   });
 
   return (
-    <MainProvider>
-      <div className='App'>
-        {themeLoaded && (
+    <div className='App'>
+      {themeLoaded && (
+        <MainProvider>
           <ThemeProvider theme={selectedTheme}>
             <GlobalStyles />
+            <RouteSwitch />
           </ThemeProvider>
-        )}
-      </div>
-    </MainProvider>
+        </MainProvider>
+      )}
+    </div>
   );
 }
 

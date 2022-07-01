@@ -1,16 +1,7 @@
-import * as React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from '../pages/home/home';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const RoutingProvider = (props) => {
-  return (
-    <Router>
-      {props.children}
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    </Router>
-  );
+  return <Router>{props.children}</Router>;
 };
 
 export default RoutingProvider;
