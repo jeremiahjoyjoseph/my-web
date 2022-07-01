@@ -1,19 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
 import { useEffect, useState } from 'react';
-import WebFont from 'webfontloader';
-import { useTheme } from './theme/useTheme';
 import { ThemeProvider } from 'styled-components';
+import WebFont from 'webfontloader';
+import './App.css';
+import MainProvider from './providers/MainProvider';
 import { GlobalStyles } from './theme/GlobalStyles';
-import { clearLS, getFromLS } from './utils/storage';
+import { useTheme } from './theme/useTheme';
 
 function App() {
-  const { theme, themeLoaded, getFonts, setMode } = useTheme();
-  const [selectedTheme, setSelectedTheme] = useState(theme);
+  const { theme, themeLoaded, getFonts } = useTheme();
+  const [selectedTheme, setSelectedTheme] = useState();
 
   useEffect(() => {
     setSelectedTheme(theme);
-  }, [themeLoaded]);
+  }, [theme]);
 
   useEffect(() => {
     WebFont.load({
@@ -24,13 +23,15 @@ function App() {
   });
 
   return (
-    <div className='App'>
-      {themeLoaded && (
-        <ThemeProvider theme={selectedTheme}>
-          <GlobalStyles />
-        </ThemeProvider>
-      )}
-    </div>
+    <MainProvider>
+      <div className='App'>
+        {themeLoaded && (
+          <ThemeProvider theme={selectedTheme}>
+            <GlobalStyles />
+          </ThemeProvider>
+        )}
+      </div>
+    </MainProvider>
   );
 }
 
