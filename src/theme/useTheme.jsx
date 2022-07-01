@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { setToLS, getFromLS } from '../utils/storage';
+import { createTheme } from '@mui/material/styles';
 import _ from 'lodash';
 
 export const useTheme = () => {

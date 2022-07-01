@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../../theme/useTheme';
-import './card.css';
+import Ripple from '../../atoms/Ripple';
+import IconButton from '../../molecules/iconButton';
 
 const Card = (props) => {
   const { theme } = useTheme();
@@ -11,19 +11,30 @@ const Card = (props) => {
     flex-direction: column;
     justify-content: center;
     padding: 0px 16px 0px 16px;
+    background-color: ${theme.colors.cardColors[0]};
+    border-radius: 5px;
+    width: 100%;
   `;
-  const CardTitle = styled.h3``;
+  const CardTitle = styled.h3`
+    display: flex;
+    align-items: center;
+  `;
 
   const CardSubtitle = styled.h4`
     color: ${theme.colors.text.secondary};
-    margin-top: 10px;
+    margin-top: 5px;
   `;
 
   return (
-    <Wrapper>
-      <CardTitle className='bold'>{props.title}</CardTitle>
-      <CardSubtitle>{props.subtitle}</CardSubtitle>
-    </Wrapper>
+    <Ripple>
+      <Wrapper>
+        <CardTitle className='bold'>
+          {props.title}
+          <IconButton name='arrow_up_right' />
+        </CardTitle>
+        <CardSubtitle>{props.subtitle}</CardSubtitle>
+      </Wrapper>
+    </Ripple>
   );
 };
 

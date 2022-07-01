@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
 import './App.css';
 import MainProvider from './providers/MainProvider';
@@ -27,10 +27,10 @@ function App() {
     <div className='App'>
       {themeLoaded && (
         <MainProvider>
-          <ThemeProvider theme={selectedTheme}>
+          <StyledThemeProvider theme={selectedTheme}>
             <GlobalStyles />
             <RouteSwitch />
-          </ThemeProvider>
+          </StyledThemeProvider>
         </MainProvider>
       )}
     </div>
