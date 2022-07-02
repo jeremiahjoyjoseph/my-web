@@ -8,20 +8,20 @@ import { GlobalStyles } from './theme/GlobalStyles';
 import { useTheme } from './theme/useTheme';
 
 function App() {
-  const { theme, themeLoaded, getFonts } = useTheme();
+  const { theme, themeLoaded } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState();
 
   useEffect(() => {
     setSelectedTheme(theme);
   }, [theme]);
 
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: getFonts(),
-      },
-    });
-  });
+  // useEffect(() => {
+  //   WebFont.load({
+  //     google: {
+  //       families: getFonts(),
+  //     },
+  //   });
+  // });
 
   return (
     <div className='App'>

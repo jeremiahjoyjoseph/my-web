@@ -21,7 +21,11 @@
         },
         "cardColors": ["#383838", "#2E2E2E", "#262626", "#1C1C1C", "#111011"]
       },
-      "font": "Nunito"
+      "font": {
+        "regular": "SatoshiRegular",
+        "semiBold": "SatoshiMedium",
+        "bold": "SatoshiBold"
+      }
     },
     "light": {
       "id": "T_002",
@@ -44,7 +48,7 @@
         },
         "cardColors": ["#383838", "#2E2E2E", "#262626", "#1C1C1C", "#111011"]
       },
-      "font": "Nunito"
+      "font": "SatoshiRegular"
     }
   }
 }

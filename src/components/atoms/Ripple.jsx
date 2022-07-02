@@ -4,11 +4,7 @@ import { useTheme } from '../../theme/useTheme';
 
 const Ripple = (props) => {
   const { theme } = useTheme();
-  return (
-    <ButtonBase sx={{ fontFamily: theme.font, width: '100%' }}>
-      {props.children}
-    </ButtonBase>
-  );
+  return <ButtonBase sx={{ width: '100%' }}>{props.children}</ButtonBase>;
 };
 
 export default Ripple;
