@@ -1,10 +1,10 @@
-export const data = {
+export const projects_data = {
   title: 'Projects',
   dark_mode_switch: true,
   go_back_available: true,
   subtitle: {
     type: 'icon',
-    data: ['developer', 'designer', 'musician'],
+    data: [],
   },
   cards: [
     {

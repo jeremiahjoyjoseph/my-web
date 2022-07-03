@@ -27,8 +27,11 @@ const Icon = (props) => {
       src={src}
       alt={alt}
       style={{
-        height: imageDimensions.height,
-        width: imageDimensions.width,
+        ...{
+          height: imageDimensions.height,
+          width: imageDimensions.width,
+        },
+        ...props.style,
       }}
     />
   );

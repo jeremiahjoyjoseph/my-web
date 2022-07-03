@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const Header = (props) => {
-  const Wrapper = styled.div`
-    height: 60px;
-  `;
-
   return <Wrapper></Wrapper>;
 };
+
+const Wrapper = styled.div`
+  height: 60px;
+`;
 
 export default Header;
