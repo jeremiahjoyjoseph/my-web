@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
     margin: 0;
     font-weight: ${fonts.weight.normal};
-    padding: 20px 40px 0px 40px;
+    padding: 20px 40px 40px 40px;
   }
 
   h6 {

@@ -27,7 +27,7 @@ const Card = (props) => {
 
   return (
     <Ripple>
-      <Wrapper>
+      <Wrapper style={props.style}>
         <CardTitle className='bold'>
           {props.title}
           <IconButton name='arrow_up_right' />
