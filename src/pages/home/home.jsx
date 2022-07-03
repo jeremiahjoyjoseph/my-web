@@ -24,6 +24,7 @@ const Home = (props) => {
               title={cardItem.title}
               subtitle={cardItem.subtitle}
               style={{ marginTop: index !== 0 ? 10 : 0 }}
+              index={index}
             />
           ))}
         </CardsWrapper>

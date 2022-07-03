@@ -11,7 +11,7 @@ const Card = (props) => {
     flex-direction: column;
     justify-content: center;
     padding: 0px 16px 0px 16px;
-    background-color: ${theme.colors.cardColors[0]};
+    background-color: ${theme.colors.cardColors[props.index]};
     border-radius: 5px;
     width: 100%;
   `;
