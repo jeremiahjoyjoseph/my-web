@@ -15,11 +15,9 @@ const DataController = ({ data }) => {
         {Object.keys(data.cards).map((key, index) => (
           <Card
             key={index}
-            title={data.cards[key].title}
-            subtitle={data.cards[key].subtitle}
             style={{ marginTop: index !== 0 ? 10 : 0 }}
             index={index}
-            route={data.cards[key].route}
+            data={data.cards[key]}
           />
         ))}
       </CardsWrapper>

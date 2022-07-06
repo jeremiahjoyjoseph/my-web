@@ -3,14 +3,19 @@ import styled from 'styled-components';
 import { useTheme } from '../../../theme/useTheme';
 import Icon from '../../atoms/Icon';
 import Ripple from '../../atoms/Ripple';
-import IconButton from '../../molecules/iconButton';
 
 const Card = (props) => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/${props.route}`);
+    switch (props.data.clickToAction) {
+      case 'navigate':
+        navigate(`/${props.route}`);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -22,10 +27,10 @@ const Card = (props) => {
         {...props}
       >
         <CardTitle className='bold'>
-          {props.title}
+          {props.data.title}
           <Icon name='arrow_up_right' style={{ marginLeft: 5 }} />
         </CardTitle>
-        <CardSubtitle theme={theme}>{props.subtitle}</CardSubtitle>
+        <CardSubtitle theme={theme}>{props.data.subtitle}</CardSubtitle>
       </Wrapper>
     </Ripple>
   );
