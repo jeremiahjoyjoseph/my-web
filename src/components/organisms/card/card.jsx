@@ -11,7 +11,7 @@ const Card = (props) => {
   const handleClick = () => {
     switch (props.data.clickToAction) {
       case 'navigate':
-        navigate(`/${props.route}`);
+        navigate(`/${props.data.route}`);
         break;
       default:
         break;

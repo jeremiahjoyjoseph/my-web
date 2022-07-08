@@ -7,17 +7,21 @@ const DataController = ({ data }) => {
   return (
     <div className='content-wrapper'>
       <TitleSection title={data.title}>
-        {data.subtitle.data.map((subtitleItem, index) => (
-          <Subtitle key={index}>{subtitleItem}</Subtitle>
-        ))}
+        {data.subtitle.type === 'text'
+          ? data.subtitle.data.map((subtitle_data, index) => (
+              <Subtitle key={index}>{subtitle_data.title}</Subtitle>
+            ))
+          : null}
       </TitleSection>
       <CardsWrapper>
         {Object.keys(data.cards).map((key, index) => (
           <Card
             key={index}
+            title={data.cards[key].title}
+            subtitle={data.cards[key].subtitle}
             style={{ marginTop: index !== 0 ? 10 : 0 }}
-            index={index}
             data={data.cards[key]}
+            index={index}
           />
         ))}
       </CardsWrapper>

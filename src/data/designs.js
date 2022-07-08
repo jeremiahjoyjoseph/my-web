@@ -1,5 +1,5 @@
 export const designs_data = {
-  title: 'Projects',
+  title: 'Designs',
   dark_mode_switch: true,
   go_back_available: true,
   subtitle: {
