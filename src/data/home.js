@@ -27,9 +27,9 @@ export const home_data = {
     },
     cv: {
       title: 'CV',
-      subtitle: 'Click to download',
-      clickToAction: 'download',
-      file: '',
+      subtitle: 'View or Download',
+      clickToAction: 'navigate',
+      route: 'cv',
     },
     designs: {
       title: 'Designs',

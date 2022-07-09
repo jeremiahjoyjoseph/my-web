@@ -5,6 +5,7 @@ import { useTheme } from '../../../theme/useTheme';
 import Icon from '../../atoms/Icon';
 import Ripple from '../../atoms/Ripple';
 import { cardClickDelay } from './util';
+import { saveAs } from 'file-saver';
 
 const Card = (props) => {
   const { theme } = useTheme();
@@ -14,6 +15,12 @@ const Card = (props) => {
     switch (props.data.clickToAction) {
       case 'navigate':
         navigate(`/${props.data.route}`);
+        break;
+      case 'external':
+        window.open(props.data.link, '_blank');
+        break;
+      case 'download':
+        saveAs(props.data.file, 'JeremiahJoyJoseph_Resume.pdf');
         break;
       default:
         break;
