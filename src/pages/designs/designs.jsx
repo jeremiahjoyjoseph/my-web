@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from '../../components/organisms/header/header';
-import DataController from '../../containers/dataContoller';
+import DataController from '../../containers/dataController/dataContoller';
 import { designs_data } from '../../data/designs';
 
 const Designs = (props) => {

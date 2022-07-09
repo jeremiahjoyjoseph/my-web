@@ -1,11 +1,14 @@
 import React from 'react';
-import Subtitle from '../components/atoms/Subtitle';
-import Card from '../components/organisms/card/card';
-import CardsWrapper from '../components/organisms/cardsWrapper/cardsWrapper';
-import TitleSection from '../components/organisms/titleSection/titleSection';
+import styled from 'styled-components';
+import Subtitle from '../../components/atoms/Subtitle';
+import Card from '../../components/organisms/card/card';
+import CardsWrapper from '../../components/organisms/cardsWrapper/cardsWrapper';
+import TitleSection from '../../components/organisms/titleSection/titleSection';
+import { device } from '../../utils/helperFunctions';
+
 const DataController = ({ data }) => {
   return (
-    <div className='content-wrapper'>
+    <ContentWrapper>
       <TitleSection title={data.title}>
         {data.subtitle.type === 'text'
           ? data.subtitle.data.map((subtitle_data, index) => (
@@ -25,8 +28,16 @@ const DataController = ({ data }) => {
           />
         ))}
       </CardsWrapper>
-    </div>
+    </ContentWrapper>
   );
 };
+
+const ContentWrapper = styled.div`
+  @media ${device.laptop} {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+`;
 
 export default DataController;

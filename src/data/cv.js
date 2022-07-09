@@ -5,12 +5,7 @@ export const cv_data = {
   go_back_available: true,
   subtitle: {
     type: 'text',
-    data: [
-      {
-        title: 'my data',
-        clickToAction: null,
-      },
-    ],
+    data: [],
   },
   cards: [
     {

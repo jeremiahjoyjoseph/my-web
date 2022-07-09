@@ -6,6 +6,7 @@ const Header = (props) => {
 
 const Wrapper = styled.div`
   height: 60px;
+  position: absolute;
 `;
 
 export default Header;
