@@ -13,9 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 20px 40px 40px 40px;
 
     @media ${device.laptop}{
-      padding: 20px 40px 0px 40px;
+      padding: 00px 40px 0px 40px;
       height: 100vh;
-      overflow: hidden;
     }
   }
 
@@ -76,6 +75,9 @@ export const GlobalStyles = createGlobalStyle`
   .page {
     @media ${device.laptop}{
       height: 100%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
     }
   }
 `;

@@ -15,7 +15,11 @@ export const home_data = {
         clickToAction: 'navigate',
         route: 'designs',
       },
-      { title: 'musician', clickToAction: 'external', link: '' },
+      {
+        title: 'musician',
+        clickToAction: 'external',
+        link: 'https://www.instagram.com/invites/contact/?i=bsjsq0410t6p&utm_content=fsw1nz8',
+      },
     ],
   },
   cards: {

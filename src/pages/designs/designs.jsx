@@ -6,7 +6,7 @@ import { designs_data } from '../../data/designs';
 const Designs = (props) => {
   const [data] = useState(designs_data);
   return (
-    <div className='page-designs'>
+    <div className='page'>
       <Header />
       <DataController data={data} {...props} />
     </div>

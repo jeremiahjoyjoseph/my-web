@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Header from '../../components/organisms/header/header';
 import DataController from '../../containers/dataController/dataContoller';
-import { music_data } from '../../data/music';
+import { pax_data } from '../../data/pax';
 
-const Music = (props) => {
-  const [data] = useState(music_data);
+const PAX = (props) => {
+  const [data] = useState(pax_data);
   return (
     <div className='page'>
       <Header />
@@ -13,4 +13,4 @@ const Music = (props) => {
   );
 };
 
-export default Music;
+export default PAX;

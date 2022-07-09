@@ -37,7 +37,9 @@ const Card = (props) => {
       >
         <CardTitle className='bold'>
           {props.data.title}
-          <Icon name='arrow_up_right' style={{ marginLeft: 5 }} />
+          {props.data.clickToAction && (
+            <Icon name='arrow_up_right' style={{ marginLeft: 5 }} />
+          )}
         </CardTitle>
         <CardSubtitle theme={theme}>{props.data.subtitle}</CardSubtitle>
       </Wrapper>

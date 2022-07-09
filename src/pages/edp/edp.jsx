@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Header from '../../components/organisms/header/header';
 import DataController from '../../containers/dataController/dataContoller';
-import { music_data } from '../../data/music';
+import { edp_data } from '../../data/edp';
 
-const Music = (props) => {
-  const [data] = useState(music_data);
+const EDP = (props) => {
+  const [data] = useState(edp_data);
   return (
     <div className='page'>
       <Header />
@@ -13,4 +13,4 @@ const Music = (props) => {
   );
 };
 
-export default Music;
+export default EDP;

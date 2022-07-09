@@ -6,7 +6,7 @@ import { cv_data } from '../../data/cv';
 const CV = (props) => {
   const [data] = useState(cv_data);
   return (
-    <div className='page-cv'>
+    <div className='page'>
       <Header />
       <DataController data={data} {...props} />
     </div>

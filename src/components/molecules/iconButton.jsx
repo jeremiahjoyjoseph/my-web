@@ -4,7 +4,7 @@ import { IconButton as MuiIconButton } from '@mui/material';
 
 const IconButton = (props) => {
   return (
-    <MuiIconButton>
+    <MuiIconButton sx={props.style} onClick={props.onClick}>
       <Icon {...props} />
     </MuiIconButton>
   );

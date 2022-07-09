@@ -12,7 +12,9 @@ const DataController = ({ data }) => {
       <TitleSection title={data.title}>
         {data.subtitle.type === 'text'
           ? data.subtitle.data.map((subtitle_data, index) => (
-              <Subtitle key={index}>{subtitle_data.title}</Subtitle>
+              <Subtitle key={index} data={subtitle_data}>
+                {subtitle_data.title}
+              </Subtitle>
             ))
           : null}
       </TitleSection>

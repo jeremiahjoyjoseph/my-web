@@ -1,12 +1,31 @@
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
+import { device } from '../../../utils/helperFunctions';
+import IconButton from '../../molecules/iconButton';
 
 const Header = (props) => {
-  return <Wrapper></Wrapper>;
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+  return (
+    <Wrapper>
+      <IconButton
+        name='arrow_left'
+        style={{ paddingLeft: 0 }}
+        onClick={handleBack}
+      />
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`
-  height: 60px;
-  position: absolute;
+  @media ${device.laptop} {
+    margin-top: 50px;
+    position: absolute;
+    width: 100%;
+  }
 `;
 
 export default Header;

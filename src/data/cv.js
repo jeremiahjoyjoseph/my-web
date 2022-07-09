@@ -19,6 +19,7 @@ export const cv_data = {
       subtitle: 'as pdf',
       clickToAction: 'download',
       file: resume_pdf,
+      fileName: 'JeremiahJoyJoseph_Resume.pdf',
     },
   ],
 };
