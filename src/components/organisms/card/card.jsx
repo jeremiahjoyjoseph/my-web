@@ -1,14 +1,16 @@
+import _ from 'lodash';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { useTheme } from '../../../theme/useTheme';
 import Icon from '../../atoms/Icon';
 import Ripple from '../../atoms/Ripple';
+import { cardClickDelay } from './util';
 
 const Card = (props) => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = _.debounce(() => {
     switch (props.data.clickToAction) {
       case 'navigate':
         navigate(`/${props.data.route}`);
@@ -16,7 +18,7 @@ const Card = (props) => {
       default:
         break;
     }
-  };
+  }, cardClickDelay);
 
   return (
     <Ripple>
