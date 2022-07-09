@@ -5,6 +5,7 @@ import Projects from '../pages/projects/projects';
 import { home_data } from '../data/home';
 import Designs from '../pages/designs/designs';
 import CV from '../pages/cv/cv';
+import Music from '../pages/music/music';
 
 const RouteSwitch = () => {
   return (
@@ -16,6 +17,7 @@ const RouteSwitch = () => {
       />
       <Route path={`/${home_data.cards.designs.route}`} element={<Designs />} />
       <Route path={`/${home_data.cards.cv.route}`} element={<CV />} />
+      <Route path={`/${home_data.cards.music.route}`} element={<Music />} />
     </Routes>
   );
 };

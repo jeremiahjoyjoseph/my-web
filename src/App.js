@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import WebFont from 'webfontloader';
 import './App.css';
 import MainProvider from './providers/MainProvider';
 import RouteSwitch from './routes/routeSwitch';

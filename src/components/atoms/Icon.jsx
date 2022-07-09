@@ -20,8 +20,10 @@ const Icon = (props) => {
         setAlt('Go to arrow!');
         setImageDimensions({ height: 16, width: 16 });
         break;
+      default:
+        break;
     }
-  }, []);
+  }, [props.name, theme.id]);
   return (
     <img
       src={src}

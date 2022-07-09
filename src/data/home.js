@@ -40,8 +40,8 @@ export const home_data = {
     music: {
       title: 'Music',
       subtitle: 'Listen',
-      clickToAction: 'external',
-      link: '',
+      route: 'music',
+      clickToAction: 'navigate',
     },
     contact: {
       title: 'Get in touch',
