@@ -31,13 +31,17 @@ const Card = (props) => {
             props.data.body
           )}`;
         window.open(`mailto:${props.data.email}${params}`);
+        break;
       default:
         break;
     }
   }, cardClickDelay);
 
   return (
-    <Ripple style={{ marginTop: props.index !== 0 ? 10 : 0 }}>
+    <Ripple
+      style={{ marginTop: props.index !== 0 ? 10 : 0 }}
+      disableRipple={props.data.clickToAction ? false : true}
+    >
       <Wrapper
         style={props.style}
         onClick={handleClick}

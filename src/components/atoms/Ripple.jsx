@@ -4,7 +4,9 @@ import React from 'react';
 const Ripple = (props) => {
   return (
     <div style={props.style}>
-      <ButtonBase sx={{ width: '100%' }}>{props.children}</ButtonBase>
+      <ButtonBase sx={{ width: '100%' }} disableRipple={props.disableRipple}>
+        {props.children}
+      </ButtonBase>
     </div>
   );
 };
