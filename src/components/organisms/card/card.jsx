@@ -22,13 +22,22 @@ const Card = (props) => {
       case 'download':
         saveAs(props.data.file, 'JeremiahJoyJoseph_Resume.pdf');
         break;
+      case 'mail':
+        let params = props.data.subject || props.data.body ? '?' : '';
+        if (props.data.subject)
+          params += `subject=${encodeURIComponent(props.data.subject)}`;
+        if (props.data.body)
+          params += `${props.data.subject ? '&' : ''}body=${encodeURIComponent(
+            props.data.body
+          )}`;
+        window.open(`mailto:${props.data.email}${params}`);
       default:
         break;
     }
   }, cardClickDelay);
 
   return (
-    <Ripple>
+    <Ripple style={{ marginTop: props.index !== 0 ? 10 : 0 }}>
       <Wrapper
         style={props.style}
         onClick={handleClick}

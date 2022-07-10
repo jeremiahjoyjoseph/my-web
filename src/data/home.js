@@ -50,8 +50,10 @@ export const home_data = {
     contact: {
       title: 'Get in touch',
       subtitle: 'via Mail',
-      clickToAction: 'external',
-      link: '',
+      clickToAction: 'mail',
+      email: 'jeremiahjoyjoseph97@gmail.com',
+      subject: 'Sending out a hello!',
+      body: 'Hey!',
     },
   },
 };

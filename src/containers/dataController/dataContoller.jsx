@@ -24,7 +24,6 @@ const DataController = ({ data }) => {
             key={index}
             title={data.cards[key].title}
             subtitle={data.cards[key].subtitle}
-            style={{ marginTop: index !== 0 ? 10 : 0 }}
             data={data.cards[key]}
             index={index}
           />
