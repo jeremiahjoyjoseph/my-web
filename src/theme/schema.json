@@ -1,0 +1,54 @@
+{
+  "data": {
+    "dark": {
+      "id": "T_001",
+      "name": "Dark",
+      "colors": {
+        "body": {
+          "background": "#000000"
+        },
+        "text": {
+          "primary": "#fefefe",
+          "secondary": "#7e7f7e"
+        },
+        "button": {
+          "text": "#7e7f7e",
+          "background": "#fefefe"
+        },
+        "link": {
+          "text": "#7e7f7e",
+          "opacity": 1
+        },
+        "cardColors": ["#383838", "#2E2E2E", "#262626", "#1C1C1C", "#111011"]
+      },
+      "font": {
+        "regular": "SatoshiRegular",
+        "semiBold": "SatoshiMedium",
+        "bold": "SatoshiBold"
+      }
+    },
+    "light": {
+      "id": "T_002",
+      "name": "Light",
+      "colors": {
+        "body": {
+          "background": "#ffffff"
+        },
+        "text": {
+          "primary": "#000000",
+          "secondary": "#7e7f7e"
+        },
+        "button": {
+          "text": "#7e7f7e",
+          "background": "#fefefe"
+        },
+        "link": {
+          "text": "#7e7f7e",
+          "opacity": 1
+        },
+        "cardColors": ["#383838", "#2E2E2E", "#262626", "#1C1C1C", "#111011"]
+      },
+      "font": "SatoshiRegular"
+    }
+  }
+}
