@@ -16,6 +16,9 @@ export const GlobalStyles = createGlobalStyle`
       padding: 00px 40px 0px 40px;
       height: 100vh;
     }
+    @media ${device.laptopL}{
+      padding: 00px 150px 0px 150px;
+    }
   }
 
   h6 {
