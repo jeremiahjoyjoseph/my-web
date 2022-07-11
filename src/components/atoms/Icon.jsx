@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import arrow_up_right from '../../assets/icons/T_001/arrow-up-right.svg';
 import arrow_left from '../../assets/icons/T_001/arrow-left.svg';
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
 const Icon = (props) => {
   const { theme } = useTheme();

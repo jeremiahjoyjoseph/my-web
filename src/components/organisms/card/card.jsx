@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import { useTheme } from '../../../theme/useTheme';
+import { useTheme } from '../../../hooks/useTheme';
 import Icon from '../../atoms/Icon';
 import Ripple from '../../atoms/Ripple';
 import { cardClickDelay } from './util';

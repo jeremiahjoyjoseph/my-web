@@ -4,7 +4,7 @@ import './App.css';
 import MainProvider from './providers/MainProvider';
 import RouteSwitch from './routes/routeSwitch';
 import { GlobalStyles } from './theme/GlobalStyles';
-import { useTheme } from './theme/useTheme';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
   const { theme, themeLoaded } = useTheme();

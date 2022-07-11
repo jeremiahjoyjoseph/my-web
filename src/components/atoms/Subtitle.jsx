@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useTheme } from '../../theme/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
 const Subtitle = (props) => {
   const { theme } = useTheme();

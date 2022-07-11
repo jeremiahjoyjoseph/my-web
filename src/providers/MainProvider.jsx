@@ -1,8 +1,13 @@
 import React from 'react';
+import { OnlineStatusProvider } from '../hooks/useOnlineStatus';
 import RoutingProvider from './routingProvider';
 
 const MainProvider = (props) => {
-  return <RoutingProvider>{props.children}</RoutingProvider>;
+  return (
+    <OnlineStatusProvider>
+      <RoutingProvider>{props.children}</RoutingProvider>
+    </OnlineStatusProvider>
+  );
 };
 
 export default MainProvider;
