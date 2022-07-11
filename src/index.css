@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'SatoshiRegular';
+  src: local('SatoshiRegular'),
+    url('./assets/fonts/Satoshi/Satoshi-Regular.otf') format('opentype');
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: 'SatoshiMedium';
+  src: local('SatoshiMedium'),
+    url('./assets/fonts/Satoshi/Satoshi-Medium.otf') format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SatoshiBold';
+  src: local('SatoshiBold'),
+    url('./assets/fonts/Satoshi/Satoshi-Bold.otf') format('opentype');
+  font-weight: bold;
+}
