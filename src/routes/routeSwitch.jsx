@@ -14,12 +14,11 @@ import Projects from '../pages/projects/projects';
 const RouteSwitch = () => {
   return (
     <Routes>
-      <Route path='/' exact element={<Home />} />
+      <Route path='/' element={<Home />} />
       <Route
         path={`/${home_data.cards.projects.route}`}
         element={<Projects />}
       />
-
       <Route path={`/${home_data.cards.designs.route}`} element={<Designs />} />
       <Route path={`/${home_data.cards.cv.route}`} element={<CV />} />
       <Route path={`/${home_data.cards.music.route}`} element={<Music />} />
