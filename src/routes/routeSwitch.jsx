@@ -18,70 +18,32 @@ const RouteSwitch = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route
-          path='/'
-          element={
-            <AnimateRoute>
-              <Home />
-            </AnimateRoute>
-          }
-        />
+        <Route path='/' element={<AnimateRoute page={Home} />} />
         <Route
           path={`/${home_data.cards.projects.route}`}
-          element={
-            <AnimateRoute>
-              <Projects />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={Projects} />}
         />
         <Route
           path={`/${home_data.cards.designs.route}`}
-          element={
-            <AnimateRoute>
-              <Designs />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={Designs} />}
         />
         <Route
           path={`/${home_data.cards.cv.route}`}
-          element={
-            <AnimateRoute>
-              <CV />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={CV} />}
         />
         <Route
           path={`/${home_data.cards.music.route}`}
-          element={
-            <AnimateRoute>
-              <Music />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={Music} />}
         />
         <Route
           path={`/${projects_data.cards.pax.route}`}
-          element={
-            <AnimateRoute>
-              <PAX />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={PAX} />}
         />
         <Route
           path={`/${projects_data.cards.edp.route}`}
-          element={
-            <AnimateRoute>
-              <EDP />
-            </AnimateRoute>
-          }
+          element={<AnimateRoute page={EDP} />}
         />
-        <Route
-          path='*'
-          element={
-            <AnimateRoute>
-              <PageNotFound />
-            </AnimateRoute>
-          }
-        />
+        <Route path='*' element={<AnimateRoute page={PageNotFound} />} />
       </Routes>
     </AnimatePresence>
   );

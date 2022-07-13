@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MotionDiv from '../atoms/MotionDiv';
 
 const AnimateRoute = (props) => {
+  const Page = props.page;
+  const [selectedVariant, setSelectedVariant] = useState();
   const variants = {
     slideInRight_slideOutLeft: {
       hidden: {
@@ -69,7 +71,10 @@ const AnimateRoute = (props) => {
       animate='visible'
       exit='exit'
     >
-      {props.children}
+      <Page
+        animationType={selectedVariant}
+        setAnimationType={setSelectedVariant}
+      />
     </MotionDiv>
   );
 };
