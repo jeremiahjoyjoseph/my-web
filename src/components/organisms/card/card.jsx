@@ -41,6 +41,7 @@ const Card = (props) => {
     <Ripple
       style={{ marginTop: props.index !== 0 ? 10 : 0 }}
       disableRipple={props.data.clickToAction ? false : true}
+      animation={props.animation}
     >
       <Wrapper
         style={props.style}

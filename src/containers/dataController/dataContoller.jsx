@@ -32,6 +32,7 @@ const DataController = ({ data }) => {
             subtitle={data.cards[key].subtitle}
             data={data.cards[key]}
             index={index}
+            animation={data.cardsAnimation}
           />
         ))}
       </CardsWrapper>
