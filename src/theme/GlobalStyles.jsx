@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.body.background};
     color: ${({ theme }) => theme.colors.text.primary};
     font-family: ${({ theme }) => theme.font.regular};
-    transition: all 0.50s linear;
+    // transition: all 0.50s linear;
     margin: 0;
     font-weight: ${fonts.weight.normal};
     padding: 20px 40px 40px 40px;
@@ -43,6 +43,10 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px;
     font-weight: ${fonts.weight.normal};
     font-family: ${({ theme }) => theme.font.regular};
+  }
+
+  .colorSecondary{
+    color: ${({ theme }) => theme.colors.text.secondary};
   }
 
   h4 {

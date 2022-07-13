@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import { useTheme } from '../../hooks/useTheme';
+import TypeAnimationText from '../organisms/typeAnimationText/typeAnimationText';
 
 const Subtitle = (props) => {
   const { theme } = useTheme();
+  console.log(props.animation);
 
   // const handleClick = _.debounce(() => {
   //   switch (props.data.clickToAction) {
@@ -23,9 +25,18 @@ const Subtitle = (props) => {
   // }, 0);
 
   return (
-    <Text theme={theme} className='semi-bold'>
-      {props.children}
-    </Text>
+    <Fragment>
+      {props.animation ? (
+        <TypeAnimationText
+          type='paste'
+          startAfter={props.animation.startAfter}
+        >{`<h3 class='colorSecondary'>${props.children}</h3>`}</TypeAnimationText>
+      ) : (
+        <Text theme={theme} className='semi-bold'>
+          {props.children}
+        </Text>
+      )}
+    </Fragment>
   );
 };
 

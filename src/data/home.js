@@ -1,5 +1,8 @@
 export const home_data = {
   title: 'Jeremiah Joy Joseph',
+  animation: {
+    startAfter: 0,
+  },
   dark_mode_switch: true,
   go_back_available: false,
   subtitle: {
@@ -9,16 +12,25 @@ export const home_data = {
         title: 'front-end developer',
         clickToAction: 'navigate',
         route: 'projects',
+        animation: {
+          startAfter: 2000,
+        },
       },
       {
         title: 'designer',
         clickToAction: 'navigate',
         route: 'designs',
+        animation: {
+          startAfter: 2250,
+        },
       },
       {
         title: 'musician',
         clickToAction: 'external',
         link: 'https://www.instagram.com/invites/contact/?i=bsjsq0410t6p&utm_content=fsw1nz8',
+        animation: {
+          startAfter: 2500,
+        },
       },
     ],
   },
