@@ -8,7 +8,7 @@ const TypeAnimationText = (props) => {
       <Typewriter
         onInit={(typewriter) => {
           typewriter
-            .changeDelay(80)
+            .changeDelay(60)
             .pauseFor(props.startAfter)
             .typeString(`${props.type === 'type' ? props.children : ''}`)
             .pasteString(`${props.type === 'paste' ? props.children : ''}`)

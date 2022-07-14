@@ -26,7 +26,7 @@ const Icon = (props) => {
           setSrc(arrow_left);
         }
         setAlt('Go to arrow!');
-        setImageDimensions({ height: 28, width: 28 });
+        setImageDimensions({ height: 34, width: 34 });
         break;
       default:
         break;

@@ -38,6 +38,14 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.font.regular};
   }
 
+  h2 {
+    display: flex;
+    font-size: ${fonts.size.h2}px;
+    margin: 0px;
+    font-weight: ${fonts.weight.normal};
+    font-family: ${({ theme }) => theme.font.regular};
+  }
+
   h3 {
     display: flex;
     font-size: ${fonts.size.h3}px;
