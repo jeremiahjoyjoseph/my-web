@@ -9,10 +9,16 @@ import { device } from '../../utils/helperFunctions';
 const DataController = ({ data }) => {
   return (
     <ContentWrapper>
-      <TitleSection title={data.title}>
+      <TitleSection title={data.title} animation={data.animation}>
         {data.subtitle.type === 'text'
           ? data.subtitle.data.map((subtitle_data, index) => (
-              <Subtitle key={index} data={subtitle_data}>
+              <Subtitle
+                key={index}
+                data={subtitle_data}
+                animation={
+                  subtitle_data.animation ? subtitle_data.animation : false
+                }
+              >
                 {subtitle_data.title}
               </Subtitle>
             ))
@@ -26,6 +32,7 @@ const DataController = ({ data }) => {
             subtitle={data.cards[key].subtitle}
             data={data.cards[key]}
             index={index}
+            animation={data.cardsAnimation}
           />
         ))}
       </CardsWrapper>

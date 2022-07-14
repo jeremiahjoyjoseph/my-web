@@ -41,6 +41,7 @@ const Card = (props) => {
     <Ripple
       style={{ marginTop: props.index !== 0 ? 10 : 0 }}
       disableRipple={props.data.clickToAction ? false : true}
+      animation={props.animation}
     >
       <Wrapper
         style={props.style}
@@ -69,6 +70,10 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.cardColors[props.index]};
   border-radius: 5px;
   width: 100%;
+  &:hover {
+    background-color: ${(props) => props.theme.colors.button.background};
+    color: ${(props) => props.theme.colors.button.text};
+  }
 `;
 const CardTitle = styled.h3`
   display: flex;
