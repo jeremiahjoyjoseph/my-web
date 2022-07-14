@@ -1,14 +1,22 @@
-import { useNavigate } from 'react-router';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { device } from '../../../utils/helperFunctions';
 import IconButton from '../../molecules/iconButton';
 
 const Header = (props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [canGoBack] = useState(location.key !== 'default' ? true : false);
 
   const handleBack = () => {
-    navigate(-1);
+    if (canGoBack) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
   };
+
   return (
     <Wrapper>
       <IconButton
@@ -25,6 +33,8 @@ const Wrapper = styled.div`
     margin-top: 50px;
     position: absolute;
     width: 100%;
+    display: flex;
+    align-items: center;
   }
 `;
 

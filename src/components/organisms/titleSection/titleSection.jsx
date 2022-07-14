@@ -5,7 +5,7 @@ import Title from '../../atoms/Title';
 const TitleSection = (props) => {
   return (
     <TitleWrapper>
-      <Title>{props.title}</Title>
+      <Title animation={props.animation}>{props.title}</Title>
       <SubtitleWrapper>{props.children}</SubtitleWrapper>
     </TitleWrapper>
   );
