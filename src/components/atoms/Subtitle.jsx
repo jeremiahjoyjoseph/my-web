@@ -30,7 +30,7 @@ const Subtitle = (props) => {
         <TypeAnimationText
           type='paste'
           startAfter={props.animation.startAfter}
-        >{`<h3 class='colorSecondary'>${props.children}</h3>`}</TypeAnimationText>
+        >{`<h3 class='colorSecondary semi-bold'>${props.children}</h3>`}</TypeAnimationText>
       ) : (
         <Text theme={theme} className='semi-bold'>
           {props.children}
