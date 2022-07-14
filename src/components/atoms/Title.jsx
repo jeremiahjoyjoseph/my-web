@@ -10,7 +10,7 @@ const Title = (props) => {
           type='type'
         >{`<h1 class='bold'>${props.children}</h1>`}</TypeAnimationText>
       ) : (
-        <h1 class='bold'>{props.children}</h1>
+        <h1 className='bold'>{props.children}</h1>
       )}
     </Fragment>
   );

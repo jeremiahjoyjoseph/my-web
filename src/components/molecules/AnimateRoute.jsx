@@ -65,7 +65,7 @@ const AnimateRoute = (props) => {
 
   return (
     <MotionDiv
-      class='page'
+      className='page'
       variants={variants[props.type]}
       initial='hidden'
       animate='visible'

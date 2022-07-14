@@ -6,7 +6,6 @@ import TypeAnimationText from '../organisms/typeAnimationText/typeAnimationText'
 
 const Subtitle = (props) => {
   const { theme } = useTheme();
-  console.log(props.animation);
 
   // const handleClick = _.debounce(() => {
   //   switch (props.data.clickToAction) {
