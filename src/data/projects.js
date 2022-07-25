@@ -1,5 +1,8 @@
 export const projects_data = {
   title: 'Projects',
+  animation: {
+    startAfter: 0,
+  },
   dark_mode_switch: true,
   go_back_available: true,
   subtitle: {
@@ -29,5 +32,8 @@ export const projects_data = {
       title: 'Carbon-Care',
       subtitle: 'a swedish based company dashboard',
     },
+  },
+  cardsAnimation: {
+    startAfter: 0.5,
   },
 };

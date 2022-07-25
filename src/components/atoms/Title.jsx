@@ -1,19 +1,7 @@
-import React, { Fragment } from 'react';
-import TypeAnimationText from '../organisms/typeAnimationText/typeAnimationText';
+import React from 'react';
 
 const Title = (props) => {
-  return (
-    <Fragment>
-      {props.animation ? (
-        <TypeAnimationText
-          startAfter={props.animation.startAfter}
-          type='type'
-        >{`<h1 class='bold'>${props.children}</h1>`}</TypeAnimationText>
-      ) : (
-        <h1 className='bold'>{props.children}</h1>
-      )}
-    </Fragment>
-  );
+  return <h1 className='bold'>{props.children}</h1>;
 };
 
 export default Title;
