@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { useTheme } from '../../hooks/useTheme';
-import TypeAnimationText from '../organisms/typeAnimationText/typeAnimationText';
 
 const Subtitle = (props) => {
   const { theme } = useTheme();
