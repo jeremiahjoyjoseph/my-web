@@ -1,12 +1,29 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
+import { titleSectionAnimation } from '../../../utils/animationConfig';
+import { slideRight } from '../../../utils/animations';
 import { device } from '../../../utils/helperFunctions';
+import MotionDiv from '../../atoms/MotionDiv';
 import Title from '../../atoms/Title';
 
 const TitleSection = (props) => {
   return (
     <TitleWrapper>
-      <Title animation={props.animation}>{props.title}</Title>
-      <SubtitleWrapper>{props.children}</SubtitleWrapper>
+      {titleSectionAnimation.active ? (
+        <MotionDiv
+          variants={slideRight(titleSectionAnimation.startAfter)}
+          initial='hidden'
+          animate='visible'
+        >
+          <Title>{props.title}</Title>
+          <SubtitleWrapper>{props.children}</SubtitleWrapper>
+        </MotionDiv>
+      ) : (
+        <Fragment>
+          <Title>{props.title}</Title>
+          <SubtitleWrapper>{props.children}</SubtitleWrapper>
+        </Fragment>
+      )}
     </TitleWrapper>
   );
 };

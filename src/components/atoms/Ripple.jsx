@@ -1,25 +1,16 @@
 import { ButtonBase } from '@mui/material';
 import React, { Fragment } from 'react';
+import { cardsAnimation } from '../../utils/animationConfig';
+import { slideUp } from '../../utils/animations';
 import MotionDiv from './MotionDiv';
 
 const Ripple = (props) => {
-  const slideUp = {
-    hidden: {
-      opacity: 0,
-      y: '+100vh',
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'tween', delay: 3 },
-    },
-  };
   return (
     <Fragment>
-      {props.animation ? (
+      {cardsAnimation.active ? (
         <MotionDiv
           style={props.style}
-          variants={slideUp}
+          variants={slideUp(cardsAnimation.startAfter)}
           initial='hidden'
           animate='visible'
         >

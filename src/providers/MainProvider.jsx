@@ -1,12 +1,15 @@
 import React from 'react';
+import { FirstLoadProvider } from '../context/firstLoadContext';
 import { OnlineStatusProvider } from '../hooks/useOnlineStatus';
 import RoutingProvider from './routingProvider';
 
 const MainProvider = (props) => {
   return (
-    <OnlineStatusProvider>
-      <RoutingProvider>{props.children}</RoutingProvider>
-    </OnlineStatusProvider>
+    <FirstLoadProvider>
+      <OnlineStatusProvider>
+        <RoutingProvider>{props.children}</RoutingProvider>
+      </OnlineStatusProvider>
+    </FirstLoadProvider>
   );
 };
 
