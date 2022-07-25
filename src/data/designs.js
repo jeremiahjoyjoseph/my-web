@@ -22,6 +22,8 @@ export const designs_data = {
     {
       title: 'FoodE',
       subtitle: 'delivery solution',
+      clickToAction: 'external',
+      link: 'https://xd.adobe.com/view/dba6cfbc-8d74-41a6-6e9f-2e7a3cae0484-ad97/',
     },
   ],
 };
