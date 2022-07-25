@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { useTheme } from '../../hooks/useTheme';
-import TypeAnimationText from '../organisms/typeAnimationText/typeAnimationText';
 
 const Subtitle = (props) => {
   const { theme } = useTheme();
@@ -24,18 +23,9 @@ const Subtitle = (props) => {
   // }, 0);
 
   return (
-    <Fragment>
-      {props.animation ? (
-        <TypeAnimationText
-          type='paste'
-          startAfter={props.animation.startAfter}
-        >{`<h3 class='colorSecondary semi-bold'>${props.children}</h3>`}</TypeAnimationText>
-      ) : (
-        <Text theme={theme} className='semi-bold'>
-          {props.children}
-        </Text>
-      )}
-    </Fragment>
+    <Text theme={theme} className='semi-bold'>
+      {props.children}
+    </Text>
   );
 };
 

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { useTheme } from '../../../hooks/useTheme';
 import Icon from '../../atoms/Icon';
@@ -9,6 +9,7 @@ import { saveAs } from 'file-saver';
 
 const Card = (props) => {
   const { theme } = useTheme();
+  let location = useLocation();
   const navigate = useNavigate();
 
   const handleClick = _.debounce(() => {
@@ -32,6 +33,9 @@ const Card = (props) => {
           )}`;
         window.open(`mailto:${props.data.email}${params}`);
         break;
+      case 'navigateNested':
+        navigate(`${location.pathname}/${props.data.route}`);
+        break;
       default:
         break;
     }
@@ -41,7 +45,6 @@ const Card = (props) => {
     <Ripple
       style={{ marginTop: props.index !== 0 ? 10 : 0 }}
       disableRipple={props.data.clickToAction ? false : true}
-      animation={props.animation}
     >
       <Wrapper
         style={props.style}
@@ -70,10 +73,10 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.cardColors[props.index]};
   border-radius: 5px;
   width: 100%;
-  &:hover {
-    background-color: ${(props) => props.theme.colors.button.background};
-    color: ${(props) => props.theme.colors.button.text};
-  }
+  // &:hover {
+  //   background-color: ${(props) => props.theme.colors.button.background};
+  //   color: ${(props) => props.theme.colors.button.text};
+  // }
 `;
 const CardTitle = styled.h3`
   display: flex;
