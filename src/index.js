@@ -1,22 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import * as themes from './theme/schema.json';
-import { setToLS } from './utils/storage';
-
-//fonts-custom
-import './assets/fonts/Satoshi/Satoshi-Regular.otf';
-import './assets/fonts/Satoshi/Satoshi-Bold.otf';
-import './assets/fonts/Satoshi/Satoshi-Medium.otf';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import * as themes from "./theme/schema.json";
+import { setToLS } from "./utils/storage";
 
 const Index = () => {
-  setToLS('all-themes', themes.default);
+  setToLS("all-themes", themes.default);
   return <App />;
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Index />
