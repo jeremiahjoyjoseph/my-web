@@ -4,10 +4,9 @@ import fonts from "./fonts";
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background-color: #DFE0E1;
-    color: ${({ theme }) => theme.colors.text.primary};
+    background-color: ${({ theme }) => theme.colors.palette.light};
+    color: ${({ theme }) => theme.colors.palette.lightest};
     font-family: ${({ theme }) => theme.font.primary};
-    // transition: all 0.50s linear;
     margin: 0;
     font-weight: ${fonts.weight.normal};
     padding: 20px 40px 40px 40px;
@@ -54,9 +53,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${({ theme }) => theme.font.primary};
   }
 
-  .colorSecondary{
-    color: ${({ theme }) => theme.colors.text.secondary};
-  }
 
   h4 {
     display: flex;

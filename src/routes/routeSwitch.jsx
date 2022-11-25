@@ -10,7 +10,6 @@ import Detail from "../pages/detail/detail";
 import Home from "../pages/home/home";
 import Music from "../pages/music/music";
 import Projects from "../pages/projects/projects";
-import WeddingWebWrapper from "../wedding_src/containers/weddingWebWrapper/weddingWebWrapper";
 import Landing from "../wedding_src/pages/landing/landing";
 
 const RouteSwitch = () => {
