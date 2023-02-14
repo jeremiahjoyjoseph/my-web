@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
-import styled from 'styled-components';
-import { titleSectionAnimation } from '../../../utils/animationConfig';
-import { slideRight } from '../../../utils/animations';
-import { device } from '../../../utils/helperFunctions';
-import MotionDiv from '../../atoms/MotionDiv';
-import Title from '../../atoms/Title';
+import { Fragment } from "react";
+import styled from "styled-components";
+import { titleSectionAnimation } from "../../../utils/animationConfig";
+import { slideRight } from "../../../utils/animations";
+import { device } from "../../../utils/helperFunctions";
+import MotionDiv from "../../atoms/MotionDiv";
+import Title from "../../atoms/Title";
 
 const TitleSection = (props) => {
   return (
@@ -12,10 +12,10 @@ const TitleSection = (props) => {
       {titleSectionAnimation.active ? (
         <MotionDiv
           variants={slideRight(titleSectionAnimation.startAfter)}
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
         >
-          <Title>{props.title}</Title>
+          <Title {...props}>{props.title}</Title>
           <SubtitleWrapper>{props.children}</SubtitleWrapper>
         </MotionDiv>
       ) : (

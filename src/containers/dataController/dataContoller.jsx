@@ -1,16 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import Subtitle from '../../components/atoms/Subtitle';
-import Card from '../../components/organisms/card/card';
-import CardsWrapper from '../../components/organisms/cardsWrapper/cardsWrapper';
-import TitleSection from '../../components/organisms/titleSection/titleSection';
-import { device } from '../../utils/helperFunctions';
+import React from "react";
+import styled from "styled-components";
+import Subtitle from "../../components/atoms/Subtitle";
+import Card from "../../components/organisms/card/card";
+import CardsWrapper from "../../components/organisms/cardsWrapper/cardsWrapper";
+import TitleSection from "../../components/organisms/titleSection/titleSection";
+import { device } from "../../utils/helperFunctions";
 
-const DataController = ({ data }) => {
+const DataController = (props) => {
+  const { data } = props;
   return (
     <ContentWrapper>
-      <TitleSection title={data.title}>
-        {data.subtitle.type === 'text'
+      <TitleSection title={data.title} {...props}>
+        {data.subtitle.type === "text"
           ? data.subtitle.data.map((subtitle_data, index) => (
               <Subtitle key={index} data={subtitle_data}>
                 {subtitle_data.title}
