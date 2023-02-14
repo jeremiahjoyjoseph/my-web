@@ -12,8 +12,8 @@ const DataController = (props) => {
     <ContentWrapper>
       <TitleSection title={data.title} {...props}>
         {data.subtitle.type === "text"
-          ? data.subtitle.data.map((subtitle_data, index) => (
-              <Subtitle key={index} data={subtitle_data}>
+          ? data.subtitle.data.map((subtitle_data) => (
+              <Subtitle key={`${subtitle_data.title}`} data={subtitle_data}>
                 {subtitle_data.title}
               </Subtitle>
             ))
@@ -22,7 +22,7 @@ const DataController = (props) => {
       <CardsWrapper>
         {Object.keys(data.cards).map((key, index) => (
           <Card
-            key={index}
+            key={key}
             title={data.cards[key].title}
             subtitle={data.cards[key].subtitle}
             data={data.cards[key]}
@@ -35,6 +35,7 @@ const DataController = (props) => {
 };
 
 const ContentWrapper = styled.div`
+  padding: 0px 20px;
   @media ${device.laptop} {
     display: flex;
     height: 100%;
