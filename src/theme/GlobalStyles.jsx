@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import { device } from '../utils/helperFunctions';
-import fonts from './fonts';
+import { createGlobalStyle } from "styled-components";
+import { device } from "../utils/helperFunctions";
+import fonts from "./fonts";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -64,6 +64,10 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0px;
     font-weight: ${fonts.weight.normal};
     font-family: ${({ theme }) => theme.font.regular};
+  }
+
+  button {
+    color: ${({ theme }) => theme.colors.text.primary};
   }
 
   .bold{

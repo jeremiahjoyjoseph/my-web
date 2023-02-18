@@ -5,7 +5,7 @@
       "name": "Dark",
       "colors": {
         "body": {
-          "background": "#000000"
+          "background": "#212426"
         },
         "text": {
           "primary": "#fefefe",
@@ -19,7 +19,7 @@
           "text": "#7e7f7e",
           "opacity": 1
         },
-        "cardColors": ["#383838", "#2E2E2E", "#262626", "#1C1C1C", "#111011"]
+        "cardColors": ["#212426", "#212426", "#212426", "#212426", "#212426"]
       },
       "font": {
         "regular": "SatoshiRegular",

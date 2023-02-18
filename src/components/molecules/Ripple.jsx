@@ -1,8 +1,8 @@
-import { ButtonBase } from '@mui/material';
-import React, { Fragment } from 'react';
-import { cardsAnimation } from '../../utils/animationConfig';
-import { slideUp } from '../../utils/animations';
-import MotionDiv from './MotionDiv';
+import { ButtonBase } from "@mui/material";
+import React, { Fragment } from "react";
+import { cardsAnimation } from "../../utils/animationConfig";
+import { slideUp } from "../../utils/animations";
+import MotionDiv from "../atoms/MotionDiv";
 
 const Ripple = (props) => {
   return (
@@ -11,11 +11,11 @@ const Ripple = (props) => {
         <MotionDiv
           style={props.style}
           variants={slideUp(cardsAnimation.startAfter)}
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
         >
           <ButtonBase
-            sx={{ width: '100%' }}
+            sx={{ width: "100%" }}
             disableRipple={props.disableRipple}
           >
             {props.children}
@@ -24,7 +24,7 @@ const Ripple = (props) => {
       ) : (
         <div style={props.style}>
           <ButtonBase
-            sx={{ width: '100%' }}
+            sx={{ width: "100%" }}
             disableRipple={props.disableRipple}
           >
             {props.children}
