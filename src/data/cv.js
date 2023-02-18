@@ -9,12 +9,6 @@ export const cv_data = {
   },
   cards: [
     {
-      title: "View",
-      subtitle: "an online resume",
-      clickToAction: "external",
-      link: "https://zety.com/profile/jeremiahjoyjoseph",
-    },
-    {
       title: "Download",
       subtitle: "as pdf",
       clickToAction: "download",

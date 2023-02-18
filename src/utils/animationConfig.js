@@ -5,7 +5,7 @@ export const titleSectionAnimation = {
 };
 export const cardsAnimation = {
   active: animationIsActive,
-  startAfter: 0.3,
+  startAfter: 0.1,
 };
 export const backButtonAnimation = {
   active: animationIsActive,

@@ -9,14 +9,15 @@ const fonts = {
     h9: 9,
     h33: 33,
     h40: 40,
+    h60: 60,
   },
 
   weight: {
-    full: '900',
-    semi: '600',
-    low: '400',
-    bold: 'bold',
-    normal: 'normal',
+    full: "900",
+    semi: "600",
+    low: "400",
+    bold: "bold",
+    normal: "normal",
   },
 };
 
