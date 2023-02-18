@@ -1,36 +1,36 @@
 export const projects_data = {
-  title: 'Projects',
+  title: "Projects",
   animation: {
     startAfter: 0,
   },
   dark_mode_switch: true,
   go_back_available: true,
   subtitle: {
-    type: 'icon',
+    type: "icon",
     data: [],
   },
   cards: {
     compass: {
-      title: 'Compass',
-      subtitle: 'employee solution mobile app',
-      clickToAction: 'external',
-      link: 'https://play.google.com/store/apps/details?id=com.bial.compass&hl=en&gl=US',
+      title: "Compass",
+      subtitle: "employee solution mobile app",
+      clickToAction: "external",
+      link: "https://play.google.com/store/apps/details?id=com.bial.compass&hl=en&gl=US",
     },
     edp: {
-      title: 'EDP',
-      subtitle: 'full blown airport customer solution',
-      clickToAction: 'navigateNested',
-      route: 'edp',
-    },
-    pax: {
-      title: 'PAX',
-      subtitle: 'passenger experience solution',
-      route: 'pax',
-      clickToAction: 'navigateNested',
+      title: "EDP",
+      subtitle: "full blown airport customer solution",
+      clickToAction: "navigateNested",
+      route: "edp",
     },
     carbon_care: {
-      title: 'Carbon-Care',
-      subtitle: 'a swedish based company dashboard',
+      title: "Carbon-Care",
+      subtitle: "a swedish based company dashboard",
+    },
+    others: {
+      title: "Other Projects",
+      subtitle: "projects that do not have a category",
+      route: "others",
+      clickToAction: "navigateNested",
     },
   },
   cardsAnimation: {

@@ -1,11 +1,13 @@
+import { saveAs } from "file-saver";
 import _ from "lodash";
 import { useLocation, useNavigate } from "react-router";
 import styled from "styled-components";
 import { useTheme } from "../../../hooks/useTheme";
+import { cardsAnimation } from "../../../utils/animationConfig";
+import { slideUp } from "../../../utils/animations";
 import Icon from "../../atoms/Icon";
-import Ripple from "../../molecules/Ripple";
+import MotionDiv from "../../atoms/MotionDiv";
 import { cardClickDelay } from "./util";
-import { saveAs } from "file-saver";
 
 const Card = (props) => {
   const { theme } = useTheme();
@@ -42,35 +44,29 @@ const Card = (props) => {
   }, cardClickDelay);
 
   return (
-    <NeuCardButton
-      onClick={handleClick}
-      style={props.style}
-      theme={theme}
-      {...props}
+    <MotionDiv
+      variants={slideUp(cardsAnimation.startAfter)}
+      initial="hidden"
+      animate="visible"
     >
-      <CardTitle className="bold">
-        {props.data.title}
-        {props.data.clickToAction && (
-          <Icon name="arrow_up_right" style={{ marginLeft: 5 }} />
-        )}
-      </CardTitle>
-      <CardSubtitle theme={theme}>{props.data.subtitle}</CardSubtitle>
-    </NeuCardButton>
+      <NeuCardButton
+        onClick={handleClick}
+        style={props.style}
+        theme={theme}
+        {...props}
+      >
+        <CardTitle className="bold">
+          {props.data.title}
+          {props.data.clickToAction && (
+            <Icon name="arrow_up_right" style={{ marginLeft: 5 }} />
+          )}
+        </CardTitle>
+        <CardSubtitle theme={theme}>{props.data.subtitle}</CardSubtitle>
+      </NeuCardButton>
+    </MotionDiv>
   );
 };
 
-const Wrapper = styled.div`
-  height: 93px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0px 16px 0px 16px;
-  background-color: ${(props) => props.theme.colors.cardColors[props.index]};
-  border-radius: 5px;
-  width: 100%;
-  box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04),
-    8px 8px 12px rgba(0, 0, 0, 0.16);
-`;
 const CardTitle = styled.h3`
   display: flex;
   align-items: center;
@@ -83,6 +79,7 @@ const CardSubtitle = styled.h4`
 `;
 
 const NeuCardButton = styled.button`
+  margin-top: ${({ index }) => (index === 0 ? "0px" : "20px")};
   height: 93px;
   display: flex;
   flex-direction: column;
@@ -91,8 +88,16 @@ const NeuCardButton = styled.button`
   background-color: ${(props) => props.theme.colors.cardColors[props.index]};
   border-radius: 5px;
   width: 100%;
+  border: none;
   box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04),
     8px 8px 12px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
+
+  &:active {
+    box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04) inset,
+      8px 8px 12px rgba(0, 0, 0, 0.16) inset;
+  }
 `;
 
 export default Card;
