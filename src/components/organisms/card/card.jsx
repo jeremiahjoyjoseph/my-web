@@ -17,7 +17,7 @@ const Card = (props) => {
   const handleClick = _.debounce(() => {
     switch (props.data.clickToAction) {
       case "navigate":
-        navigate(`/${props.data.route}`);
+        navigate(`${props.data.route}`);
         break;
       case "external":
         window.open(props.data.link, "_blank");
@@ -34,9 +34,6 @@ const Card = (props) => {
             props.data.body
           )}`;
         window.open(`mailto:${props.data.email}${params}`);
-        break;
-      case "navigateNested":
-        navigate(`${location.pathname}/${props.data.route}`);
         break;
       default:
         break;
