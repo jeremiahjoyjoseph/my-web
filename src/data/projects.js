@@ -16,21 +16,27 @@ export const projects_data = {
       clickToAction: "external",
       link: "https://play.google.com/store/apps/details?id=com.bial.compass&hl=en&gl=US",
     },
-    edp: {
-      title: "EDP",
-      subtitle: "full blown airport customer solution",
-      clickToAction: "navigateNested",
-      route: "edp",
+    blr_airport_app: {
+      title: "BLR Airport App",
+      subtitle: "employee solution mobile app",
+      clickToAction: "external",
+      link: "https://play.google.com/store/apps/details?id=com.bial.compass&hl=en&gl=US",
+    },
+    blr_airport_website: {
+      title: "BLR Airport Website",
+      subtitle: "Bangalore Airport Website",
+      clickToAction: "external",
+      link: "https://www.bengaluruairport.com",
     },
     carbon_care: {
       title: "Carbon-Care",
-      subtitle: "a swedish based company dashboard",
+      subtitle: "a swedish based company's analytics/display dashboard",
     },
     others: {
       title: "Other Projects",
       subtitle: "projects that do not have a category",
-      route: "others",
-      clickToAction: "navigateNested",
+      route: "/projects/others",
+      clickToAction: "navigate",
     },
   },
   cardsAnimation: {
