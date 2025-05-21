@@ -32,6 +32,18 @@ export const projects_data = {
       title: "Carbon-Care",
       subtitle: "a swedish based company's analytics/display dashboard",
     },
+    worship_team: {
+      title: "Worship Team",
+      subtitle: "Managing a worship team, submit dates, create rosters, manage teams. MVP version only.",
+      clickToAction: "navigate",
+      route: "/projects/worship_team",
+    },
+    two_cents: {
+      title: "Two Cents",
+      subtitle: "Expense Tracked - but for couples, syncs real time with each others accounts.",
+      clickToAction: "external",
+      link: "https://github.com/jeremiahjoyjoseph/two-cents",
+    },
   },
   cardsAnimation: {
     startAfter: 0.5,
@@ -80,9 +92,34 @@ export const projects_data = {
           clickToAction: "external",
           link: "https://www.bengaluruairport.com/duty-free?domain=Duty%20Free",
         },
-      
       ],
     },
-    
+    worship_team: {
+      title: "Worship Team",
+      dark_mode_switch: true,
+      go_back_available: true,
+      subtitle: {
+        type: "text",
+        data: [
+          {
+            title: "A worship team website for a church, submit dates, create rosters, manage teams. MVP version only.",
+          },
+        ],
+      },
+      cards: [
+        {
+          title: "Worship Team Website",
+          subtitle: "Built using NextJS, and repurposed apis from worship-api",
+          clickToAction: "external",
+          link: "https://github.com/jeremiahjoyjoseph/worship-team",
+        },
+        {
+          title: "Worship Team App - Backend",
+          subtitle:'Initially built backend using mongoDB',
+          clickToAction: "external",
+          link: "https://github.com/jeremiahjoyjoseph/worship-api",
+        },
+      ],
+    },
   }
 };

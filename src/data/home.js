@@ -1,3 +1,4 @@
+import resume_pdf from "../assets/files/JeremiahJoyJosephResume.pdf";
 export const home_data = {
   title: "Jeremiah Joy Joseph",
   animation: {
@@ -28,9 +29,10 @@ export const home_data = {
     },
     cv: {
       title: "CV",
-      subtitle: "View or Download",
-      clickToAction: "navigate",
-      route: "/cv",
+      subtitle: "Download",
+      clickToAction: "download",
+      file: resume_pdf,
+      fileName: "JeremiahJoyJoseph_Resume.pdf",
     },
     designs: {
       title: "Designs",
@@ -50,7 +52,7 @@ export const home_data = {
       title: "Get in touch",
       subtitle: "via Mail",
       clickToAction: "mail",
-      email: "jeremiahjoyjoseph97@gmail.com",
+      email: "mail.jeremiahjoseph@gmail.com",
       subject: "Sending out a hello!",
       body: "Hey!",
     },

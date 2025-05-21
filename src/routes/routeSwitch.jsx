@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import AnimateRoute from '../components/molecules/AnimateRoute';
 import { home_data } from '../data/home';
 import PageNotFound from '../pages/404/404';
-import CV from '../pages/cv/cv';
 import Designs from '../pages/designs/designs';
 import Detail from '../pages/detail/detail';
 import Home from '../pages/home/home';
@@ -32,10 +31,7 @@ const RouteSwitch = () => {
           path={`/${home_data.cards.designs.route}`}
           element={<AnimateRoute page={Designs} type="slideInRight_slideOutLeft"/>}
         />
-        <Route
-          path={`/${home_data.cards.cv.route}`}
-          element={<AnimateRoute page={CV} type="slideInRight_slideOutLeft"/>}
-        />
+        
         <Route path='*' element={<AnimateRoute page={PageNotFound} type="slideInRight_slideOutLeft"/>} />
       </Routes>
     </AnimatePresence>
