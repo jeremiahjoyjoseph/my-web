@@ -16,22 +16,7 @@ export const home_data = {
           startAfter: 2000, //in milliSec
         },
       },
-      {
-        title: "designer",
-        clickToAction: "navigate",
-        route: "/designs",
-        animation: {
-          startAfter: 2250, //in milliSec
-        },
-      },
-      {
-        title: "musician",
-        clickToAction: "external",
-        link: "https://www.instagram.com/invites/contact/?i=bsjsq0410t6p&utm_content=fsw1nz8",
-        animation: {
-          startAfter: 2500, //in milliSec
-        },
-      },
+      
     ],
   },
   cards: {
@@ -52,12 +37,14 @@ export const home_data = {
       route: "/designs",
       subtitle: "UI/UX",
       clickToAction: "navigate",
+      disabled:true
     },
     music: {
       title: "Music",
       subtitle: "Listen",
       route: "/music",
       clickToAction: "navigate",
+      disabled:true
     },
     contact: {
       title: "Get in touch",

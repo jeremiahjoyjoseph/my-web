@@ -8,7 +8,6 @@ import CV from '../pages/cv/cv';
 import Designs from '../pages/designs/designs';
 import Detail from '../pages/detail/detail';
 import Home from '../pages/home/home';
-import Music from '../pages/music/music';
 import Projects from '../pages/projects/projects';
 
 const RouteSwitch = () => {
@@ -16,32 +15,28 @@ const RouteSwitch = () => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path='/' element={<AnimateRoute page={Home} />} />
+        <Route path='/' element={<AnimateRoute page={Home} type="slideInRight_slideOutLeft"/>} />
         <Route
           path={`/${home_data.cards.projects.route}`}
-          element={<AnimateRoute page={Projects} />}
+          element={<AnimateRoute page={Projects} type="slideInRight_slideOutLeft"/>}
         />
         <Route
           path={`/projects/:detailPageName`}
-          element={<AnimateRoute page={Detail} />}
+          element={<AnimateRoute page={Detail} type="slideInRight_slideOutLeft"/>}
         />
         <Route
           path={`/designs/:detailPageName`}
-          element={<AnimateRoute page={Detail} />}
+          element={<AnimateRoute page={Detail} type="slideInRight_slideOutLeft"/>}
         />
         <Route
           path={`/${home_data.cards.designs.route}`}
-          element={<AnimateRoute page={Designs} />}
+          element={<AnimateRoute page={Designs} type="slideInRight_slideOutLeft"/>}
         />
         <Route
           path={`/${home_data.cards.cv.route}`}
-          element={<AnimateRoute page={CV} />}
+          element={<AnimateRoute page={CV} type="slideInRight_slideOutLeft"/>}
         />
-        <Route
-          path={`/${home_data.cards.music.route}`}
-          element={<AnimateRoute page={Music} />}
-        />
-        <Route path='*' element={<AnimateRoute page={PageNotFound} />} />
+        <Route path='*' element={<AnimateRoute page={PageNotFound} type="slideInRight_slideOutLeft"/>} />
       </Routes>
     </AnimatePresence>
   );

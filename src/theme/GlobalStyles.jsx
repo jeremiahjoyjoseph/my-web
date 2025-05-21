@@ -7,63 +7,59 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.body.background};
     color: ${({ theme }) => theme.colors.text.primary};
     font-family: ${({ theme }) => theme.font.regular};
-    // transition: all 0.50s linear;
     margin: 0;
     font-weight: ${fonts.weight.normal};
-    padding: 20px 40px 40px 40px;
+    padding: 20px 16px;
 
     @media ${device.laptop}{
-      padding: 00px 40px 0px 40px;
+      padding: 0px 78px;
       height: 100vh;
       overflow: hidden;
     }
     @media ${device.laptopL}{
-      padding: 00px 150px 0px 150px;
+      padding: 0px 136px;
     }
   }
 
-  h6 {
+  /* Typography styles that work with Tailwind */
+  h1, h2, h3, h4, h5, h6 {
     display: flex;
-    font-size: ${fonts.size.h6}px;
     margin: 0px;
-    font-weight: ${fonts.weight.normal};
     font-family: ${({ theme }) => theme.font.regular};
   }
 
   h1 {
-    display: flex;
     font-size: ${fonts.size.h1}px;
-    margin: 0px;
     font-weight: ${fonts.weight.normal};
-    font-family: ${({ theme }) => theme.font.regular};
   }
 
   h2 {
-    display: flex;
     font-size: ${fonts.size.h2}px;
-    margin: 0px;
     font-weight: ${fonts.weight.normal};
-    font-family: ${({ theme }) => theme.font.regular};
   }
 
   h3 {
-    display: flex;
     font-size: ${fonts.size.h3}px;
-    margin: 0px;
     font-weight: ${fonts.weight.normal};
-    font-family: ${({ theme }) => theme.font.regular};
+  }
+
+  h4 {
+    font-size: ${fonts.size.h4}px;
+    font-weight: ${fonts.weight.normal};
+  }
+
+  h5 {
+    font-size: ${fonts.size.h5}px;
+    font-weight: ${fonts.weight.normal};
+  }
+
+  h6 {
+    font-size: ${fonts.size.h6}px;
+    font-weight: ${fonts.weight.normal};
   }
 
   .colorSecondary{
     color: ${({ theme }) => theme.colors.text.secondary};
-  }
-
-  h4 {
-    display: flex;
-    font-size: ${fonts.size.h4}px;
-    margin: 0px;
-    font-weight: ${fonts.weight.normal};
-    font-family: ${({ theme }) => theme.font.regular};
   }
 
   button {

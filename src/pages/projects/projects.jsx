@@ -8,7 +8,7 @@ const Projects = (props) => {
   return (
     <div className='page'>
       <Header />
-      <DataController data={data} {...props} />
+      <DataController data={data} {...props} titleSize="h40" largeTitleSize="h60" />
     </div>
   );
 };

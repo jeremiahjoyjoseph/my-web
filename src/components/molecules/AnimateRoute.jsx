@@ -9,15 +9,17 @@ const AnimateRoute = (props) => {
       hidden: {
         opacity: 0,
         x: '-100vw',
+        transition: { type: 'spring', delay: 0.2, duration: 0.5 },
       },
       visible: {
         opacity: 1,
         x: 0,
-        transition: { type: 'spring', delay: 0.2 },
+        transition: { type: 'spring', delay: 0.2, duration: 0.5 },
       },
       exit: {
         x: '-100vw',
         transition: { ease: 'easeInOut' },
+        
       },
     },
     slideInLeft_slideOutRight: {

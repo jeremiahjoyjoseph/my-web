@@ -1,6 +1,6 @@
 import { saveAs } from "file-saver";
 import _ from "lodash";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { useTheme } from "../../../hooks/useTheme";
 import { cardsAnimation } from "../../../utils/animationConfig";
@@ -11,7 +11,7 @@ import { cardClickDelay } from "./util";
 
 const Card = (props) => {
   const { theme } = useTheme();
-  let location = useLocation();
+
   const navigate = useNavigate();
 
   const handleClick = _.debounce(() => {
@@ -45,55 +45,72 @@ const Card = (props) => {
       variants={slideUp(cardsAnimation.startAfter)}
       initial="hidden"
       animate="visible"
+      className="transition-all duration-300 hover:scale-[1.02]"
     >
       <NeuCardButton
         onClick={handleClick}
         style={props.style}
         theme={theme}
         {...props}
+        className="group"
       >
-        <CardTitle className="bold">
+        <CardTitle className="flex items-center font-bold">
           {props.data.title}
           {props.data.clickToAction && (
-            <Icon name="arrow_up_right" style={{ marginLeft: 5 }} />
+            <Icon 
+              name="arrow_up_right" 
+              className="ml-2 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" 
+            />
           )}
         </CardTitle>
-        <CardSubtitle theme={theme}>{props.data.subtitle}</CardSubtitle>
+        <CardSubtitle theme={theme} className="mt-1 text-left">
+          {props.data.subtitle}
+        </CardSubtitle>
       </NeuCardButton>
     </MotionDiv>
   );
 };
 
-const CardTitle = styled.h3`
-  display: flex;
-  align-items: center;
-`;
+const CardTitle = styled.h3``;
 
 const CardSubtitle = styled.h4`
   color: ${({ theme }) => theme.colors.text.secondary};
-  margin-top: 5px;
-  text-align: left;
 `;
 
 const NeuCardButton = styled.button`
   margin-top: ${({ index }) => (index === 0 ? "0px" : "20px")};
-  height: 93px;
+  min-height: 93px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 16px 0px 16px;
-  background-color: ${(props) => props.theme.colors.cardColors[props.index]};
+  padding: 16px;
+  background-color: ${(props) => props.theme.colors.body.background};
   border-radius: 5px;
   width: 100%;
   border: none;
-  box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04),
-    8px 8px 12px rgba(0, 0, 0, 0.16);
-
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.04),
+              inset 4px 4px 8px rgba(0, 0, 0, 0.16);
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.04),
+                8px 8px 16px rgba(0, 0, 0, 0.16);
+    transform: translateY(-2px);
+  }
 
   &:active {
-    box-shadow: -8px -8px 12px rgba(255, 255, 255, 0.04) inset,
-      8px 8px 12px rgba(0, 0, 0, 0.16) inset;
+    box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.04),
+                4px 4px 8px rgba(0, 0, 0, 0.16);
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    &:active {
+      box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.04),
+                  8px 8px 16px rgba(0, 0, 0, 0.16);
+      transform: translateY(-2px);
+    }
   }
 `;
 

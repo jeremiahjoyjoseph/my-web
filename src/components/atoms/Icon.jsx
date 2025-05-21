@@ -43,6 +43,7 @@ const Icon = (props) => {
         },
         ...props.style,
       }}
+      className={props.className}
     />
   );
 };

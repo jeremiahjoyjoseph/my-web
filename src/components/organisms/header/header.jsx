@@ -32,6 +32,7 @@ const Header = (props) => {
             name="arrow_left"
             style={{ paddingLeft: 0 }}
             onClick={handleBack}
+            className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
           />
         </MotionDiv>
       ) : (
@@ -46,7 +47,7 @@ const Header = (props) => {
 };
 
 const Wrapper = styled.div`
-  padding: 0px 20px;
+  padding: 0px;
   @media ${device.laptop} {
     margin-top: 50px;
     position: absolute;

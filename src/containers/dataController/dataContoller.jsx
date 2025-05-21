@@ -21,13 +21,15 @@ const DataController = (props) => {
       </TitleSection>
       <CardsWrapper>
         {Object.keys(data.cards).map((key, index) => (
+          data.cards[key].disabled ? null : (
           <Card
             key={key}
             title={data.cards[key].title}
             subtitle={data.cards[key].subtitle}
             data={data.cards[key]}
             index={index}
-          />
+            />
+          )
         ))}
       </CardsWrapper>
     </ContentWrapper>
@@ -35,7 +37,7 @@ const DataController = (props) => {
 };
 
 const ContentWrapper = styled.div`
-  padding: 0px 20px;
+  padding: 0px 0px;
   @media ${device.laptop} {
     display: flex;
     height: 100%;
