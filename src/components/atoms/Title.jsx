@@ -4,19 +4,23 @@ import fonts from "../../theme/fonts";
 import { device } from "../../utils/helperFunctions";
 
 const Title = (props) => {
-  // Split the text into individual letters and preserve spaces
-  const letters = props.children.split('').map((letter, index) => (
-    <LetterSpan 
-      key={index} 
-      isSpace={letter === ' '}
-    >
-      {letter}
-    </LetterSpan>
+  // Split into words first, then into letters
+  const words = props.children.split(" ").map((word, wordIndex) => (
+    <WordWrapper key={wordIndex}>
+      {word.split("").map((letter, letterIndex) => (
+        <LetterSpan 
+          key={`${wordIndex}-${letterIndex}`} 
+          isSpace={false}
+        >
+          {letter}
+        </LetterSpan>
+      ))}
+    </WordWrapper>
   ));
 
   return (
     <CustomTitle className="bold" {...props}>
-      <DesktopTitle>{letters}</DesktopTitle>
+      <DesktopTitle>{words}</DesktopTitle>
       <MobileTitle>{props.children}</MobileTitle>
     </CustomTitle>
   );
@@ -24,30 +28,51 @@ const Title = (props) => {
 
 const LetterSpan = styled.span`
   transition: transform 0.3s ease;
-  display: ${props => props.isSpace ? 'inline' : 'inline-block'};
+  display: inline-block;
   white-space: pre;
-  
+
   &:hover {
     transform: translateY(-8px);
   }
 `;
 
+const WordWrapper = styled.span`
+  display: inline-block;
+  margin-right: 0.25em;
+  white-space: nowrap;
+`;
+
 const DesktopTitle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+
   @media ${device.mobile} {
     display: none;
+  }
+  @media ${device.laptop} {
+    display: flex;
   }
 `;
 
 const MobileTitle = styled.div`
-  display: none;
-  @media ${device.mobile} {
-    display: block;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  @media ${device.laptop} {
+    display: none;
   }
 `;
 
 export const CustomTitle = styled.h1`
   font-size: ${({ titleSize }) =>
     titleSize ? `${fonts.size[titleSize]}px` : fonts.size.h40};
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: keep-all;
 
   @media ${device.laptopL} {
     font-size: ${({ largeTitleSize }) =>
