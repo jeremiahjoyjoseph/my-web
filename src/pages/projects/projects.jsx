@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import React from 'react';
 import Header from '../../components/organisms/header/header';
 import DataController from '../../containers/dataController/dataContoller';
 import { projects_data } from '../../data/projects';
+import PageWrapper from '../../components/atoms/PageWrapper';
 
 const Projects = (props) => {
-  const [data] = useState(projects_data);
+  const [data] = React.useState(projects_data);
   return (
-    <div className='page'>
-      <Header />
-      <DataController data={data} {...props} titleSize="h40" largeTitleSize="h60" />
-    </div>
+    <PageWrapper className="page">
+      <Header pageView={true} data={data} />
+      <DataController data={data} {...props} titleSize="h40" largeTitleSize="h60" pageView={true} />
+    </PageWrapper>
   );
 };
 

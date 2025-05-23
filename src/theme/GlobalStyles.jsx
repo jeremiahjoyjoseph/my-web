@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { device } from "../utils/helperFunctions";
-import fonts from "./fonts";
+import { createGlobalStyle } from 'styled-components';
+import { device } from '../utils/helperFunctions';
+import fonts from './fonts';
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -94,6 +94,17 @@ export const GlobalStyles = createGlobalStyle`
       width: 100%;
       position: relative;
       overflow: hidden;
+
+      @media (max-height: 640px) {
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding-bottom: 40px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      } 
     }
   }
 `;

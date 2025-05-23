@@ -1,17 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import fonts from "../../theme/fonts";
-import { device } from "../../utils/helperFunctions";
+import React from 'react';
+import styled from 'styled-components';
+import fonts from '../../theme/fonts';
+import { device } from '../../utils/helperFunctions';
 
 const Title = (props) => {
   // Split into words first, then into letters
-  const words = props.children.split(" ").map((word, wordIndex) => (
+  const words = props.children.split(' ').map((word, wordIndex) => (
     <WordWrapper key={wordIndex}>
-      {word.split("").map((letter, letterIndex) => (
-        <LetterSpan 
-          key={`${wordIndex}-${letterIndex}`} 
-          isSpace={false}
-        >
+      {word.split('').map((letter, letterIndex) => (
+        <LetterSpan key={`${wordIndex}-${letterIndex}`} isSpace={false}>
           {letter}
         </LetterSpan>
       ))}
@@ -19,7 +16,7 @@ const Title = (props) => {
   ));
 
   return (
-    <CustomTitle className="bold" {...props}>
+    <CustomTitle className="bold" {...props} pageView={props.pageView}>
       <DesktopTitle>{words}</DesktopTitle>
       <MobileTitle>{props.children}</MobileTitle>
     </CustomTitle>
@@ -68,8 +65,7 @@ const MobileTitle = styled.div`
 `;
 
 export const CustomTitle = styled.h1`
-  font-size: ${({ titleSize }) =>
-    titleSize ? `${fonts.size[titleSize]}px` : fonts.size.h40};
+  font-size: ${({ titleSize }) => (titleSize ? `${fonts.size[titleSize]}px` : fonts.size.h40)};
   max-width: 100%;
   word-wrap: break-word;
   word-break: keep-all;
