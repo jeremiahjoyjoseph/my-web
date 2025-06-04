@@ -2,12 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../utils/helperFunctions';
 
-const PageWrapper = ({ children, className }) => {
-  return <Wrapper className={className}>{children}</Wrapper>;
+const PageWrapper = ({ children, className, pageView }) => {
+  return (
+    <Wrapper className={className} pageView={pageView}>
+      {children}
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`
-  overflow-y: auto;
+  overflow-y: ${({ pageView }) => (pageView ? 'scroll' : 'hidden')};
   padding-bottom: 40px;
   height: 100vh;
   scroll-behavior: smooth;
